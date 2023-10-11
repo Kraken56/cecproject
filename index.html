@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer Satisfaction Survey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('./bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            font-family: helvetica;
+            color: black;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #formquestions {
+            display: flex;
+            margin-top: 10px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        form {
+            width: 700px;
+            padding: 35px;
+            font-family: helvetica;
+            border: 2px solid grey;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .custss {
+            display: inline-block;
+            font-size: 38px;
+            font-family: helvetica;
+            font-weight: bold;
+            padding-bottom: 4px;
+            border-bottom: 3px solid rgb(175, 1, 175);
+        }
+
+        .persinf {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 23px;
+            font-family: helvetica;
+            font-weight: bold;
+        }
+
+        label {
+            font-size: 17px;
+            font-family: helvetica;
+        }
+
+        .titlediv {
+            display: inline-block;
+            font-size: 17px;
+            font-family: helvetica;
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+
+        .titlelabelstyle {
+            margin-right: 40px;
+            margin-left: 3px;
+        }
+
+        .labeldiv {
+            display: inline-block;
+            font-size: 17px;
+            font-family: helvetica;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .pinfo {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        input[type=text] {
+            display: inline;
+            width: 98%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid grey;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        input[type=text]:focus {
+            outline: none;
+            border: 1px solid rgba(228, 5, 228, 0.808);
+            display: inline;
+            width: 98%;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+
+        input[type=email] {
+            display: inline;
+            width: 98%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid grey;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        input[type=email]:focus {
+            outline: none;
+            border: 1px solid rgba(228, 5, 228, 0.808);
+            display: inline;
+            width: 98%;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+
+        input[type=number] {
+            display: inline;
+            width: 98%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid grey;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+        input[type=number]:focus {
+            outline: none;
+            border: 1px solid rgba(228, 5, 228, 0.808);
+            display: inline;
+            width: 98%;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+
+        input[type=date] {
+            display: inline;
+            width: 98%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid grey;
+            border-radius: 3px;
+            padding: 5px;
+            font-family: helvetica;
+        }
+
+        input[type=date]:focus {
+            outline: none;
+            border: 1px solid rgba(228, 5, 228, 0.808);
+            display: inline;
+            width: 98%;
+            border-radius: 3px;
+            padding: 5px;
+        }
+
+
+        input[type=radio] {
+            accent-color: rgb(158, 1, 158);
+        }
+
+        .csq {
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 23px;
+            font-family: helvetica;
+            font-weight: bold;
+        }
+
+        .optlabelstyle {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        textarea {
+            display: inline;
+            width: 95%;
+            margin: 10px;
+            font-family: helvetica;
+            padding: 5px;
+            resize: none;
+        }
+
+        textarea:focus {
+            display: inline;
+            width: 95%;
+            margin: 10px;
+            font-family: helvetica;
+            padding: 5px;
+            outline: none;
+            border: 1px solid rgba(228, 5, 228, 0.808);
+            resize: none;
+        }
+
+        .btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .submitbtn {
+            display: inline;
+            background-color: black;
+            font-family: helvetica;
+            font-size: 15px;
+            outline: none;
+            color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+
+        .submitbtn:hover {
+            display: inline;
+            background-color: rgb(65, 65, 65);
+            font-family: helvetica;
+            font-size: 15px;
+            outline: none;
+            color: whitek;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+
+        .submitbtn:active {
+            display: inline;
+            background-color: rgb(173, 173, 173);
+            font-family: helvetica;
+            font-size: 15px;
+            outline: none;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+        }
+
+        .foottext {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid purple;
+            border-radius: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="formquestions">
+
+        <form>
+            <div class="custss">Customer Satisfaction Survey</div>
+            <br>
+            <div class="persinf">Personal Information:</div>
+            <br><br>
+            <div class="titlediv">Title:</div><br>
+
+            <input type="radio" name="title" value="Mr." id="title-option-1">
+            <label for="title-option-1" class="titlelabelstyle">Mr.</label>
+
+
+            <input type="radio" name="title" value="Mrs." id="title-option-2">
+            <label for="title-option-2" class="titlelabelstyle">Mrs.</label>
+
+
+            <input type="radio" name="title" value="Ms." id="title-option-3">
+            <label for="title-option-3" class="titlelabelstyle">Ms.</label>
+
+            <br><br>
+            <label for="firstname" class="pinfo">First Name</label><br>
+            <input type="text" name="firstname" id="firstname">
+
+            <br>
+            <label for="lastname" class="pinfo">Last Name</label><br>
+            <input type="text" name="lastname" id="lastname">
+
+            <br>
+            <label for="street" class="pinfo">Address</label><br>
+            <input type="text" name="street" id="street">
+            <br>
+            <label for="city" class="pinfo">City</label><br>
+            <input type="text" name="city" id="city">
+
+            <br>
+            <label for="state" class="pinfo">State/Province</label><br>
+            <input type="text" name="state" id="state">
+
+            <br>
+            <label for="zipcode" class="pinfo">Zip Code</label><br>
+            <input type="text" name="zipcode" id="zipcode">
+
+            <br>
+            <label for="email" class="pinfo">E-mail Address</label><br>
+            <input type="email" name="email" id="email" required>
+
+            <br>
+            <label for="phno" class="pinfo">Phone Number</label><br>
+            <input type="number" name="phno" id="phno" required>
+
+            <br>
+            <label for="dob" class="pinfo">Date of Birth</label><br>
+            <input type="date" name="dob" id="dob" required>
+
+            <br>
+            <div class="csq">Customer Satisfaction Questions:</div>
+
+            <br><br>
+            <div class="labeldiv">1. How did you hear about our company?</div>
+            <br>
+            <input type="radio" name="q1" id="q1op1" value="social_media">
+            <label for="q1op1" class="optlabelstyle">Social Media</label><br>
+            <input type="radio" name="q1" id="q1op2" value="word_of_mouth">
+            <label for="q1op2" class="optlabelstyle">Word of mouth</label><br>
+            <input type="radio" name="q1" id="q1op3" value="ads">
+            <label for="q1op3" class="optlabelstyle">Advertisements</label>
+
+            <br>
+            <div class="labeldiv">2. If yes, what products/services are you currently using?</div>
+            <br>
+            <textarea name="q2" id="q2" cols="30" rows="3" required placeholder="Write your answer here"></textarea>
+
+            <br>
+            <div class="labeldiv">3. On a scale from 1 to 5, how satisfied are you with our products/services?</div>
+            <br>
+            <input type="radio" name="q3" id="q3op1" value="1">
+            <label for="q3op1" class="optlabelstyle">Very dissatisfied</label><br>
+            <input type="radio" name="q3" id="q3op2" value="2">
+            <label for="q3op2" class="optlabelstyle">Dissatisfied</label><br>
+            <input type="radio" name="q3" id="q3op3" value="3">
+            <label for="q3op3" class="optlabelstyle">Neutral</label><br>
+            <input type="radio" name="q3" id="q3op4" value="4">
+            <label for="q3op4" class="optlabelstyle">Satisfied</label><br>
+            <input type="radio" name="q3" id="q3op5" value="5">
+            <label for="q3op5" class="optlabelstyle">Very satisfied</label>
+
+            <br>
+            <div class="labeldiv">4. What do you like most about our products/services?</div>
+            <br>
+            <textarea name="q4" id="q4" cols="30" rows="3" required placeholder="Write your answer here"></textarea>
+
+            <br>
+            <div class="labeldiv">5. What areas do you think we can improve on?</div>
+            <br>
+            <textarea name="q5" id="q5" cols="30" rows="3" required placeholder="Write your answer here"></textarea>
+
+            <br>
+            <div class="labeldiv">6. How likely are you to recommend our products/services to others?</div>
+            <br>
+            <input type="radio" name="q6" id="q6op1" value="1">
+            <label for="q6op1" class="optlabelstyle">Not at all likely</label><br>
+            <input type="radio" name="q6" id="q6op2" value="2">
+            <label for="q6op2" class="optlabelstyle">Not very likely</label><br>
+            <input type="radio" name="q6" id="q6op3" value="3">
+            <label for="q6op3" class="optlabelstyle">Neutral</label><br>
+            <input type="radio" name="q6" id="q6op4" value="4">
+            <label for="q6op4" class="optlabelstyle">Likely</label><br>
+            <input type="radio" name="q6" id="q6op5" value="5">
+            <label for="q6op5" class="optlabelstyle">Very likely</label>
+
+            <br>
+            <div class="labeldiv">7. How would you rate our customer support service?</div>
+            <br>
+            <input type="radio" name="q7" id="q7op1" value="1">
+            <label for="q7op1" class="optlabelstyle">Very poor</label><br>
+            <input type="radio" name="q7" id="q7op2" value="2">
+            <label for="q7op2" class="optlabelstyle">Poor</label><br>
+            <input type="radio" name="q7" id="q7op3" value="3">
+            <label for="q7op3" class="optlabelstyle">Neutral</label><br>
+            <input type="radio" name="q7" id="q7op4" value="4">
+            <label for="q7op4" class="optlabelstyle">Good</label><br>
+            <input type="radio" name="q7" id="q7op5" value="5">
+            <label for="q7op5" class="optlabelstyle">Excellent</label>
+
+            <br>
+            <div class="btn"><input type="submit" value="Submit" class="submitbtn"></div>
+
+            <div class="foottext">Web Development project on 'Customer Satisfaction Survey' made by Tuhin Das.</div>
+
+        </form>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
